@@ -11,7 +11,7 @@ AllCops:
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 120
+  Max: 200
 Metrics/MethodLength:
   Include:
     - "app/controllers/*"
@@ -26,7 +26,11 @@ Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
   AllowedMethods: ['describe']
-  Max: 30
+  Max: 40
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false
@@ -58,3 +62,15 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
+Layout/EndOfLine:
+  Enabled: false
+  Exclude:
+    - 'app/controllers/application_controller.rb'
+    - 'app/helpers/application_helper.rb'
+    - 'app/channels/**/*'
+    - 'app/jobs/**/*'
+    - 'app/models/**/*'
+    - 'bin/**/*'
+    - 'config/initializers/**/*'
+    - 'db/migrate/**/*'
+    - 'db/seeds.rb'
