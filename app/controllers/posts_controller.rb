@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_user
+
   def index
     # logic to fetch all posts by a given user goes here
   end
