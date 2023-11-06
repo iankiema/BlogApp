@@ -6,4 +6,10 @@ class PostsController < ApplicationController
   def show
     # logic to fetch a single post goes here
   end
+
+  private
+
+  def set_user
+    @user = User.find(params[:user_id])
+  end
 end
