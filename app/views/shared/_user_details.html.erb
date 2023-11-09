@@ -1,25 +1,16 @@
-
-<div class="container">
-  <h1 class="mb-4">All Users</h1>
-  <% @users.each do |user| %>
+<div class="user-detail">
     <div class="user-container">
         <div class="user-photo">
-          <%= image_tag user.photo, alt: "#{user.name}'s photo"%>
+            <%= image_tag user.photo, alt: "#{user.name}'s photo"%>
         </div>
         <div class="user-info">
             <h5 class="user-name"><%= link_to user.name, user_path(user),class:'user-link' %></h5>
             <p class="user-post">Posts: <%= user.posts_counter %></p>
         </div>
     </div>
-  <% end %>
+    <div class="bio">
+        <p><strong>Bio:</strong></p>
+        <p><%= @user.bio%></p>
+    </div>
 </div>
-
-
-
-
-
-
-
-
-
 

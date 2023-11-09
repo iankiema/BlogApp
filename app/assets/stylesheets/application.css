@@ -1,15 +1,155 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+.user-container {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.user-detail {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.user-photo {
+  height: auto;
+  margin-right: 20px;
+  padding: 5px;
+}
+
+.user-info {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.user-name {
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.user-post {
+  margin-top: auto;
+  margin-left: auto;
+  padding-right: 50px;
+}
+
+.user-name a {
+  text-decoration: none;
+}
+
+.bio {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.post-card {
+  display: flex;
+  width: 95%;
+  height: 100%;
+  margin: auto;
+  margin-bottom: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.post-info {
+  width: 60%;
+  height: 100%;
+  background-color: #f4f4f4;
+  padding-left: 20px;
+}
+
+.com-post {
+  display: flex;
+  width: 40%;
+  gap: 20px;
+  background-color: #f4f4f4;
+  font-size: 12px;
+}
+
+.post-page {
+  width: 50%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 5px;
+  z-index: -1;
+}
+
+.card-text {
+  margin-right: 10px;
+  margin-top: auto;
+}
+
+.comments-page {
+  width: 50%;
+  height: auto;
+  background-color: white;
+  margin: auto;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.all-posts-btn {
+  margin: auto;
+  text-decoration: none;
+  background-color: grey;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+}
+
+.comments-details {
+  display: flex;
+}
+
+.comments-post {
+  display: flex;
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.post-com-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 90%;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
