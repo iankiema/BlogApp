@@ -10,4 +10,8 @@ class User < ApplicationRecord
   def three_recent_posts
     Post.where(author: self).order(created_at: :desc).first(3)
   end
+
+  def update_posts_counter
+    update(posts_counter: posts.count)
+  end
 end

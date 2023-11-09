@@ -13,17 +13,31 @@
 
  <div class="post-page">
       <% @posts.each do |post| %>
-        <div class="post-card">
-            <div class="post-info">
-              <%= render 'shared/post_summary', post: post %>
-              <p class="card-text"><%= post.text %></p>
+            <div class="post-card">
+                <div class="post-info">
+                <%= render 'shared/post_summary', post: post %>
+                <p class="card-text"><%= post.text %></p>
+                </div>
+                
+                <div class="com-post">
+                    <p class="card-text"><strong>Comments:</strong> <%= post.comments_counter %></p>
+                    <p class="card-text"><strong>Likes:</strong> <%= post.likes_counter %></p>
+                </div>
             </div>
-            
-            <div class="com-post">
-                <p class="card-text"><strong>Comments:</strong> <%= post.comments_counter %></p>
-                <p class="card-text"><strong>Likes:</strong> <%= post.likes_counter %></p>
+            <div class="post-com-card">
+                <% if post.five_recent_comments.present?%>
+                    <% post.five_recent_comments.each do | comment |%>
+                        <%= render 'shared/comment', comment: comment%>
+                    <% end %>
+                <% else %>
+                        <p>No recent commments for this post</p> 
+                    <% end %>
             </div>
-        </div>
       <% end %>
+
+      <% if @posts.empty?%>
+        <p>User has no posts.</p>
+     <% end %>
+       
       <%= link_to "Pagenation", user_posts_path(@user), class:"all-posts-btn"%>
     </div>
