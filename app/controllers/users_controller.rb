@@ -1,9 +1,19 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show]
+
   def index
-    # logic to fetch all users goes here
+    @users = User.all
   end
 
   def show
-    # logic to fetch a single user goes here
+    # @user.increment!(:posts_counter)
+  end
+
+  private
+
+  def set_user
+    @user = User.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render plain: 'User not found', status: :not_found
   end
 end

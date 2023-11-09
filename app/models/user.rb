@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-  has_many :post, foreign_key: 'author_id'
+  has_many :posts, foreign_key: 'author_id'
   has_many :comment
-  has_many :like
+  has_many :like, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
 
   validates :name, presence: true
   validates :posts_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }

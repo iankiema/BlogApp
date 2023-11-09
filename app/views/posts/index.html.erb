@@ -1,1 +1,29 @@
-<h1>All Posts by a Given User</h1>
+<div class="user-detail">
+    <div class="user-container">
+        <div class="user-photo">
+            <%= image_tag @user.photo, alt: "#{@user.name}'s photo"%>
+        </div>
+        <div class="user-info">
+            <h5 class="user-name"><%= link_to @user.name, user_path(@user),class:'user-link' %></h5>
+            <p class="user-post">Posts: <%= @user.posts_counter %></p>
+        </div>
+    </div>
+</div>
+
+
+ <div class="post-page">
+      <% @posts.each do |post| %>
+        <div class="post-card">
+            <div class="post-info">
+              <%= render 'shared/post_summary', post: post %>
+              <p class="card-text"><%= post.text %></p>
+            </div>
+            
+            <div class="com-post">
+                <p class="card-text"><strong>Comments:</strong> <%= post.comments_counter %></p>
+                <p class="card-text"><strong>Likes:</strong> <%= post.likes_counter %></p>
+            </div>
+        </div>
+      <% end %>
+      <%= link_to "Pagenation", user_posts_path(@user), class:"all-posts-btn"%>
+    </div>

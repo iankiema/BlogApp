@@ -1,1 +1,19 @@
-<h1>Single Post</h1>
+
+<div class="comments-page">
+    <h5><%=  @post.title %> by <%= @user.name%></h5>
+
+    <div class="comments-details">
+        <p><strong>Text:</strong><%= @post.text %></p>
+
+        <div class="comments-post">
+            <p class="card-text"><strong>Comments:</strong> <%= @post.comments_counter %></p>
+            <p class="card-text"><strong>Likes:</strong> <%= @post.likes_counter %></p>
+        </div>
+    </div>
+  
+
+    <h2>Comments</h2>
+    <% @post.five_recent_comments.each do | comment |%>
+        <%= render 'shared/comment', comment: comment%>
+    <% end %>
+</div>

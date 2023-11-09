@@ -1,1 +1,26 @@
-<h1>User Profile</h1>
+
+<div class="container">
+
+  <%= render 'shared/user_details', user: @user %>
+
+  <h2 class="mt-4">Posts</h2>
+
+
+   <div class="post-page">
+      <% @user.three_recent_posts.each do |post| %>
+        <div class="post-card">
+            <div class="post-info">
+              <%= render 'shared/post_summary', post: post %>
+              <p class="card-text"><%= post.text %></p>
+            </div>
+            
+            <div class="com-post">
+                <p class="card-text"><strong>Comments:</strong> <%= post.comments_counter %></p>
+                <p class="card-text"><strong>Likes:</strong> <%= post.likes_counter %></p>
+            </div>
+        </div>
+      <% end %>
+      <%= link_to "See all posts", user_posts_path(@user), class:"all-posts-btn"%>
+    </div>
+</div>
+
