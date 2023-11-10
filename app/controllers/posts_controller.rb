@@ -4,6 +4,16 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts
+    @index ||= []
+  end
+
+  def create
+    @post = current_user.posts.build(post_params)
+    if @post.save
+      redirect_to @post, notice: 'Post Created successfully'
+    else
+      render :new
+    end
   end
 
   def show
@@ -24,5 +34,9 @@ class PostsController < ApplicationController
 
   def set_user
     @user = User.find(params[:user_id])
+  end
+
+  def post_params
+    params.require(:post).permit(:title, :text)
   end
 end

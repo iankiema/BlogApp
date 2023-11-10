@@ -7,10 +7,22 @@
 
         <div class="comments-post">
             <p class="card-text"><strong>Comments:</strong> <%= @post.comments_counter %></p>
+            <%= form_for [@post, Like.new], url: post_likes_path(@post) do |f| %>
+                <%= f.hidden_field :user_id, value: current_user.id %>
+                <%= f.submit "Like", class: "like-button" %>
+            <% end %>
             <p class="card-text"><strong>Likes:</strong> <%= @post.likes_counter %></p>
         </div>
     </div>
-  
+
+    <%= form_for [@post, Comment.new] do |f| %>
+        <div class="field">
+             <%= f.label :text %>
+          <%= f.text_area :text %>
+        </div>
+
+         <%= f.submit "Add Comment" %>
+    <% end %>
 
     <h2>Comments</h2>
     <% @post.comments.each do | comment |%>

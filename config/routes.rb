@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts do
-    resources :commments, only: [:create]
+    resources :comments, only: [:create]
     resources :likes, only: [:create]
     member do
       post 'like'
