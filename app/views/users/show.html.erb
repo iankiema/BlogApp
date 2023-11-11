@@ -22,19 +22,9 @@
       <% end %>
 
       <%= form_for(@user.posts.build) do |f| %>
-    <div class="field">
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </div>
 
-    <div class="field">
-      <%= f.label :text %>
-      <%= f.text_area :text %>
-    </div>
+    <%= link_to "Create Post", new_post_path(@user), class: "actions" %>
 
-    <div class="actions">
-      <%= f.submit 'Create Post' %>
-    </div>
     <% end %>
       <%= link_to "See all posts", user_posts_path(@user), class:"all-posts-btn"%>
     </div>

@@ -7,6 +7,11 @@ class CommentsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def new
+    @post = Post.find(params[:post_id])
+    @comment = current_user.comment.build
+  end
+
   private
 
   def comment_params
