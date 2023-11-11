@@ -20,6 +20,12 @@
             </div>
         </div>
       <% end %>
+
+      <%= form_for(@user.posts.build) do |f| %>
+
+    <%= link_to "Create Post", new_post_path(@user), class: "actions" %>
+
+    <% end %>
       <%= link_to "See all posts", user_posts_path(@user), class:"all-posts-btn"%>
     </div>
 </div>

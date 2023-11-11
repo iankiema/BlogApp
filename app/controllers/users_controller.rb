@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @user.increment!(:posts_counter)
+    @user = User.find(params[:id])
+    @post = Post.new
   end
 
   private

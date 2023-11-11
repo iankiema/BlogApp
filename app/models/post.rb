@@ -11,6 +11,7 @@ class Post < ApplicationRecord
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   after_create :increment_post_counter
+  before_validation :initialize_counters
 
   def create_like(user)
     likes.create(user:)
@@ -31,5 +32,12 @@ class Post < ApplicationRecord
 
   def all_comments
     comments.order(created_at: :desc)
+  end
+
+  private
+
+  def initialize_counters
+    self.comments_counter ||= 0
+    self.likes_counter ||= 0
   end
 end

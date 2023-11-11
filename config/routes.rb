@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   end
 
   resources :posts do
-    resources :commments, only: [:create]
-    resources :likes, only: [:create]
+    resources :comments, only: [:new, :create]
+    resources :likes, only: [:new, :create]
     member do
       post 'like'
     end
   end
+
+  resources :posts, only: [:new, :create]
 end

@@ -7,10 +7,18 @@
 
         <div class="comments-post">
             <p class="card-text"><strong>Comments:</strong> <%= @post.comments_counter %></p>
+            <%= form_for [@post, Like.new], url: post_likes_path(@post) do |f| %>
+                <%= f.hidden_field :user_id, value: current_user.id %>
+                <%= f.submit "Like", class: "like-button" %>
+            <% end %>
             <p class="card-text"><strong>Likes:</strong> <%= @post.likes_counter %></p>
         </div>
     </div>
-  
+
+    <!-- app/views/posts/show.html.erb -->
+
+    <%= link_to "Add Comment", new_post_comment_path(@post), class: "comment-link" %>
+
 
     <h2>Comments</h2>
     <% @post.comments.each do | comment |%>
