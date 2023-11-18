@@ -63,4 +63,8 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
 end
+Capybara.default_driver = :selenium_chrome
+Capybara.javascript_driver = :selenium_chrome_headless
+Capybara.default_max_wait_time = 10 # Adjust the value based on your needs
