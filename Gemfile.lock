@@ -101,6 +101,12 @@ GEM
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
+    database_cleaner (2.0.2)
+      database_cleaner-active_record (>= 2, < 3)
+    database_cleaner-active_record (2.1.0)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     date (3.3.3)
     debug (1.8.0)
       irb (>= 1.5.0)
@@ -129,6 +135,8 @@ GEM
       activesupport (>= 5.0.0)
     json (2.6.3)
     language_server-protocol (3.17.0.3)
+    launchy (2.5.2)
+      addressable (~> 2.8)
     loofah (2.21.4)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -166,7 +174,7 @@ GEM
     popper_js (2.11.8)
     psych (5.1.1.1)
       stringio
-    public_suffix (5.0.3)
+    public_suffix (5.0.4)
     puma (5.6.7)
       nio4r (~> 2.0)
     racc (1.7.2)
@@ -296,6 +304,7 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (4.0.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.12)
@@ -308,9 +317,11 @@ DEPENDENCIES
   bootsnap
   bootstrap (~> 5.1.0)
   capybara
+  database_cleaner
   debug
   importmap-rails
   jbuilder
+  launchy
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.1)
@@ -323,6 +334,7 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   web-console
+  will_paginate
 
 RUBY VERSION
    ruby 3.2.2p53

@@ -99,7 +99,7 @@ It should display the Ruby version that is currently installed. If this does not
 
 [Download and Install Ruby](https://www.ruby-lang.org/en/downloads/)
 
-[Download and Install Rails](https://www.rails-lang.org/en/downloads/)
+[Download and Install Rails](https://guides.rubyonrails.org/getting_started.html)
 
 ### Usage
 
@@ -122,9 +122,6 @@ rails s
     rubocop
 ```
 
-### Deployment
-
-- Deployment is not applicable in this project at the moment.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -138,6 +135,11 @@ rails s
 - Twitter: [@twitterhandle](https://twitter.com/IanMwas2)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/ian-kiema)
 
+👤 *Menendez NELSON*
+
+- GitHub: [@menendezon](https://github.com/menendezon)
+- Twitter: [@menendezon](https://twitter.com/menendezon)
+- LinkedIn: [MenendezON](https://linkedin.com/in/menendezon)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
