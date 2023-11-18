@@ -99,7 +99,7 @@ It should display the Ruby version that is currently installed. If this does not
 
 [Download and Install Ruby](https://www.ruby-lang.org/en/downloads/)
 
-[Download and Install Rails](https://www.rails-lang.org/en/downloads/)
+[Download and Install Rails](https://guides.rubyonrails.org/getting_started.html)
 
 ### Usage
 
