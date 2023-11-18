@@ -11,6 +11,7 @@ class Api::V1::CommentsController < ApplicationController
              status: :bad_request
     end
   end
+
   def create
     @user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
@@ -24,7 +25,9 @@ class Api::V1::CommentsController < ApplicationController
              status: :unprocessable_entity
     end
   end
+
   private
+
   def comment_params
     params.require(:comment).permit(:text)
   end
