@@ -4,8 +4,8 @@ class PostsController < ApplicationController
   def index
     set_user
     @user = User.find(params[:user_id])
-    #@posts = @user.posts
-    #@index ||= []
+    # @posts = @user.posts
+    # @index ||= []
     @posts = Post.includes(:author).where(author_id: params[:user_id])
     @posts = @posts.paginate(page: params[:page], per_page: 3)
   end
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 
   def show
     set_user
-    #@post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
     @post = Post.includes(:author).find_by(author_id: params[:user_id], id: params[:id])
   end
 
