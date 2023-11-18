@@ -16,7 +16,7 @@
     </div>
 
     <% if can? :destroy, @post %>
-        <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        <%= button_to 'Delete', user_post_path(@post.author), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
     <% end %>
 
     <!-- app/views/posts/show.html.erb -->
