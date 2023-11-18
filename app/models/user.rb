@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :like, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :post
 
-  enum role: [:user, :admin]
+  enum role: %i[user admin]
 
   # validates :name, presence: true
   # validates :posts_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
