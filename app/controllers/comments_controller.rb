@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 
   def new
     @post = Post.find(params[:post_id])
-    @comment = current_user.comments.build
+    @comment = current_user.comment.build
   end
 
   private
