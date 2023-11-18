@@ -1,7 +1,7 @@
 <div class="user-detail">
     <div class="user-container">
         <div class="user-photo">
-            <%= image_tag user.photo, alt: "#{user.name}'s photo"%>
+            <%= image_tag(user.photo.url, alt: "#{user.name}'s photo") if user.photo.present?%>
         </div>
         <div class="user-info">
             <h5 class="user-name"><%= link_to user.name, user_path(user),class:'user-link' %></h5>
