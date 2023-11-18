@@ -20,7 +20,7 @@ RSpec.describe 'Users', type: :feature do
 
     it 'displays the bio of the user' do
       visit user_path(@user1)
-      expect(page).to have_content( @user1.bio)
+      expect(page).to have_content(@user1.bio)
     end
 
     it "displays the user's first 3 posts" do
