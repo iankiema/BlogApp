@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     member do
       post 'like'
     end
+    delete 'destroy',on: :member
   end
 end
