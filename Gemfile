@@ -70,4 +70,7 @@ end
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'bootstrap', '~> 5.1.0'
+gem 'database_cleaner'
 gem 'rails-controller-testing'
+
+gem 'devise', '~> 4.9'
