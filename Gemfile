@@ -73,4 +73,5 @@ gem 'bootstrap', '~> 5.1.0'
 gem 'database_cleaner'
 gem 'rails-controller-testing'
 
+gem 'cancancan'
 gem 'devise', '~> 4.9'

@@ -15,6 +15,10 @@
         </div>
     </div>
 
+    <% if can? :destroy, @post %>
+        <%= button_to 'Delete', user_post_path(@post.author), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    <% end %>
+
     <!-- app/views/posts/show.html.erb -->
 
     <%= link_to "Add Comment", new_post_comment_path(@post), class: "comment-link" %>
