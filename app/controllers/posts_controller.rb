@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_user, only: %i[new create]
 
+  load_and_authorize_resource expect:
+  %i[index show]
+
   def index
     set_user
     @user = User.find(params[:user_id])
@@ -20,6 +23,15 @@ class PostsController < ApplicationController
       puts @post.errors.full_messages
       render :new
     end
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
+    @post.likes.destroy_all
+    @post.comments.destroy_all
+    @post.destroy
+    redirect_to user_posts_path(@user), notice: 'Post deleted successfully.'
   end
 
   def show

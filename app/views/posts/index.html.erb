@@ -17,20 +17,28 @@
       <% @posts.each do |post| %>
             <div class="post-card">
                 <div class="post-info">
-                <%= render 'shared/post_summary', post: post %>
-                <p class="card-text"><%= post.text %></p>
+                    <%= render 'shared/post_summary', post: post %>
+                    <p class="card-text"><%= post.text %></p>
                 </div>
                 
                 <div class="com-post">
                     <p class="card-text"><strong>Comments:</strong> <%= post.comments_counter %></p>
                     <p class="card-text"><strong>Likes:</strong> <%= post.likes_counter %></p>
                 </div>
+
+                <% if can?(:destroy, @post) %>
+                     <%= button_to 'Delete Post', user_post_path(@post.author, @post), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }, class: 'btn btn-danger' %>
+                 <% end %>
             </div>
             <div class="post-com-card">
                 <% if post.five_recent_comments.present?%>
                     <% post.five_recent_comments.each do | comment |%>
                         <%= render 'shared/comment', comment: comment%>
+                         <% if can?(:destroy, comment) %>
+                        <%= button_to 'Delete Comment', user_post_comment_path(@user, @post, comment), method: :delete, data: { confirm: 'Are you sure you want to delete this comment?' }, class: 'btn btn-danger' %>
                     <% end %>
+                    <% end %>
+                   
                 <% else %>
                         <p>No recent commments for this post</p> 
                     <% end %>
